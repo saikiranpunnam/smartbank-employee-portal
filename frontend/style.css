@@ -1,0 +1,70 @@
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+}
+
+/* Sidebar */
+.sidebar {
+  width: 220px;
+  height: 100vh;
+  position: fixed;
+  background: linear-gradient(180deg, #141e30, #243b55);
+  color: white;
+  padding: 20px;
+}
+
+/* Main */
+.main {
+  margin-left: 240px;
+  padding: 30px;
+}
+
+/* Header */
+.header {
+  background: linear-gradient(90deg, #1c92d2, #f2fcfe);
+  padding: 20px;
+  border-radius: 10px;
+}
+
+/* Cards */
+.card {
+  background: rgba(255,255,255,0.1);
+  backdrop-filter: blur(10px);
+  padding: 20px;
+  margin-top: 20px;
+  border-radius: 15px;
+  color: white;
+}
+
+/* Inputs */
+input {
+  padding: 10px;
+  margin: 10px;
+  border-radius: 6px;
+  border: none;
+}
+
+/* Button */
+button {
+  padding: 10px;
+  background: #00c6ff;
+  color: white;
+  border: none;
+  border-radius: 6px;
+}
+
+/* Table */
+table {
+  width: 100%;
+  margin-top: 10px;
+}
+
+th {
+  background: rgba(255,255,255,0.2);
+  color: white;
+}
+
+td {
+  color: white;
+}
