@@ -1,4 +1,4 @@
-const API_URL = "https://api.echova.in/api";
+const API_URL = "https://api.yourdomain.com/api";
 
 document.getElementById("empForm").addEventListener("submit", async (e) => {
   e.preventDefault();
