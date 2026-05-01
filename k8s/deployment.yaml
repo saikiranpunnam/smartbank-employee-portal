@@ -1,0 +1,44 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: smartbank-portal
+  namespace: smartbank
+  labels:
+    app: smartbank-portal
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: smartbank-portal
+  template:
+    metadata:
+      labels:
+        app: smartbank-portal
+    spec:
+      containers:
+        - name: smartbank-portal
+          image: saikiranp2000/smartbank-portal:1
+          # ↑ Jenkins will update this tag on every build
+          ports:
+            - containerPort: 80
+          env:
+            - name: NODE_ENV
+              value: production
+            - name: DB_HOST
+              valueFrom:
+                secretKeyRef:
+                  name: smartbank-secrets
+                  key: db-host
+          resources:
+            requests:
+              memory: "128Mi"
+              cpu: "100m"
+            limits:
+              memory: "256Mi"
+              cpu: "500m"
+          livenessProbe:
+            httpGet:
+              path: /
+              port: 80
+            initialDelaySeconds: 10
+            periodSeconds: 15
